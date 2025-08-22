@@ -5,180 +5,249 @@
 <div class="row" style="margin-top: 3rem">
     <form id="form_print" method="post" action="{{route('web.dashboard.print')}}" target="_blank">
         {{csrf_field()}}
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label for="size">Type/Size</label>
-                            <input type="nemail" name="size" class="form-control" id="size" value="CONTOH AJA" readonly>
-                        </div>
-                        <div id="label_length" class="form-group">
-                            <label for="length">Length (meter)</label>
-                            <input type="number" name="length" class="form-control" id="length" placeholder="Length">
-                        </div>
-                        <div id="label_weight" class="form-group">
-                            <label for="weight">Weight (Kg)</label>
-                            <input type="number" name="weight" class="form-control" id="weight" placeholder="Weight">
-                        </div>
-                        <div id="label_date" class="form-group">
-                            <label for="date">Date</label>
-                            <select id="date" name="shift_date" class="form-control">                            
-                            </select>
-                        </div>
-						<div id="label_lot_not" class="form-group">
-                            <label for="lot_not">Lot No</label>
-                            <input type="number" name="lot_not" value="" class="form-control" id="lot_not" placeholder="Lot No (ex: 001)">
-                        </div>
-                        <div id="label_shift" class="form-group">
-                            <label for="shift">Shift</label>
-                            <select name="shift" id="shift" class="form-control">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </div>
-                        <div id="label_machine_no" class="form-group">
-                            <label for="machine_no">Machine No</label>
-                            <select name="machine_number" id="machine_no" class="form-control">
-                                <option value="221" selected>221</option>
-                                <option value="222">222</option>
-                                <option value="223">223</option>
-                                <option value="224">224</option>
-                                <option value="225">225</option>
-								<option value="226">226</option>
-                                <option value="227">227</option>
-                                <option value="228">228</option>
-                                <option value="229">229</option>
-								<option value="230">230</option>
-                                <option value="231">231</option>
-                                <option value="217">217</option>
-                            </select>
-                        </div>
-                    </div>
+<div class="row">
+    <!-- Kolom kiri -->
+    <div class="col-sm-4 col-sm-offset-2">
+        <div class="panel panel-default" style="background: rgba(255, 255, 255, 0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(31,38,135,0.37); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="size">Type/Size</label>
+                    <input type="text" name="size" class="form-control" id="size" value="CONTOH AJA" readonly>
+                </div>
+                <div id="label_length" class="form-group">
+                    <label for="length">Length (meter)</label>
+                    <input type="number" name="length" class="form-control" id="length" placeholder="Length" required>
+                </div>
+                <div id="label_weight" class="form-group">
+                    <label for="weight">Weight (Kg)</label>
+                    <input type="number" name="weight" class="form-control" id="weight" placeholder="Weight" required>
+                </div>
+                <div id="label_date" class="form-group">
+                    <label for="date">Date</label>
+                    <select id="date" name="shift_date" class="form-control" required></select>
+                </div>
+                <div id="label_lot_not" class="form-group">
+                    <label for="lot_not">Lot No</label>
+                    <input type="number" name="lot_not" value="" class="form-control" id="lot_not" placeholder="Lot No (ex: 001)" required>
+                </div>
+                <div id="label_shift" class="form-group">
+                    <label for="shift">Shift</label>
+                    <select name="shift" id="shift" class="form-control" required>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div id="label_machine_no" class="form-group">
+                    <label for="machine_no">Machine No</label>
+                    <select name="machine_number" id="machine_no" class="form-control" required>
+                        <option value="221" selected>221</option>
+                        <option value="222">222</option>
+                        <option value="223">223</option>
+                        <option value="224">224</option>
+                        <option value="225">225</option>
+                        <option value="226">226</option>
+                        <option value="227">227</option>
+                        <option value="228">228</option>
+                        <option value="229">229</option>
+                        <option value="230">230</option>
+                        <option value="231">231</option>
+                        <option value="217">217</option>
+                    </select>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div id="label_pitch" class="form-group">
-                            <label for="pitch">Pitch</label>
-                            <div class="radio">
-                                <label>
-                                    <input name="pitch" value="20.25" type="radio" checked> 20.25
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input name="pitch" value="22.50" type="radio"> 22.50
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">                        
-                            <label for="direction">Direction</label>
-                            <div class="radio">
-                                <label>
-                                    <input name="direction" value="S" type="radio" checked> S
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input name="direction" value="Z" type="radio"> Z
-                                </label>
-                            </div>
-                        </div>        
-                        <div class="form-group">
-                            <label for="visual">Visual</label>
-                            <div class="radio">
-                                <label>
-                                    <input name="visual" value="OK" type="radio" checked> OK
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input name="visual" value="NG" type="radio"> NG
-                                </label>
-                            </div>
-                        </div>
-                        <div id="label_remark" class="form-group">
-                            <label for="remark">Remark</label>
-                            <input type="text" name="remark" class="form-control" id="remark" placeholder="Remark">
-                        </div>
-                        
-                        <div id="label_bobin_no" class="form-group">
-                            <label for="bobin_no">No Bobin</label>
-                            <input type="number" name="bobin_no" value="" class="form-control" id="bobin_no" placeholder="No Bobin">
-                        </div>
+        </div>
+    </div>
+
+    <!-- Kolom kanan -->
+    <div class="col-sm-4">
+        <div class="panel panel-default" style="background: rgba(255, 255, 255, 0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(31,38,135,0.37); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+            <div class="panel-body">
+                <div id="label_pitch" class="form-group">
+                    <label for="pitch">Pitch</label>
+                    <div class="radio">
+                        <label>
+                            <input name="pitch" value="20.25" type="radio" checked required> 20.25
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input name="pitch" value="22.50" type="radio"> 22.50
+                        </label>
                     </div>
                 </div>
-            </div>    
-        </div>
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <button type="submit" class="btn btn-primary btn-block">Print</button>
+                <div class="form-group">                        
+                    <label for="direction">Direction</label>
+                    <div class="radio">
+                        <label>
+                            <input name="direction" value="S" type="radio" checked required> S
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input name="direction" value="Z" type="radio"> Z
+                        </label>
+                    </div>
+                </div>        
+                <div class="form-group">
+                    <label for="visual">Visual</label>
+                    <div class="radio">
+                        <label>
+                            <input name="visual" value="OK" type="radio" checked required> OK
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input name="visual" value="NG" type="radio"> NG
+                        </label>
+                    </div>
+                </div>
+                <div id="label_remark" class="form-group">
+                    <label for="remark">Remark</label>
+                    <input type="text" name="remark" class="form-control" id="remark" placeholder="Remark" required>
+                </div>
+                <div id="label_bobin_no" class="form-group">
+                    <label for="bobin_no">No Bobin</label>
+                    <input type="number" name="bobin_no" value="" class="form-control" id="bobin_no" placeholder="No Bobin" required>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <button type="submit" 
+            class="btn btn-primary btn-block" 
+            style="background:#0284c7 !important;
+                   border:none !important;
+                   color:#fff !important;
+                   font-weight:600;
+                   box-shadow:0 4px 10px rgba(255, 255, 255, 0.93);
+                   border-radius:6px;
+                   transition:all 0.2s ease-in-out;"
+            onmouseover="this.style.background='#0284c7'; this.style.boxShadow='0 6px 14px rgba(226, 240, 243, 0.7)'"
+            onmouseout="this.style.background='#0284c7'; this.style.boxShadow='0 4px 10px rgba(201, 209, 211, 0.5)'">
+            Print
+        </button>
+    </div>
+</div>
+
     </form>
 </div>
 
-<div class="row" style="margin-top: 3rem; padding: 5rem;">
+<div class="row" style="margin-top: 3rem; padding: 3rem;">
     <div class="col-sm-12">
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title v-align-middle">Data Label</h3>
+        <div class="box" 
+             style="background:#ffffff;
+                    border-radius:10px;
+                    border:1px solid #e5e7eb;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+                    overflow:hidden;">
+            
+            <!-- Header -->
+            <div class="box-header with-border" 
+                 style="background:#0284c7;
+                        color:#fff;
+                        padding:1rem 1.5rem;
+                        border-bottom:1px solid #e5e7eb;">
+                <h2 class="box-title v-align-middle" 
+                    style="margin:0;font-weight:600;font-size:17px;letter-spacing:0.3px;">
+                    Data Label
+                </h2>
             </div>
             
-            <div class="box-body">
+            <!-- Body -->
+            <div class="box-body" style="padding:1.5rem;color:#1e293b;">
                 <div class="container-fluid">
                     
+                    <!-- Search & Filter -->
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label class="sr-only" for="search">Pencarian</label>
-                                    <input type="text" 
-                                           value="{{ request('search') ?? '' }}" 
-                                           placeholder="Masukan Lot No." 
-                                           class="form-control input-sm" 
-                                           name="search" 
-                                           id="search" style="display: inline-block; width: auto; vertical-align: middle;">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-sm" style="vertical-align: middle;">Cari</button>
+                            <form class="form-inline" style="gap:0.5rem;">
+                                <input type="text" 
+                                       value="{{ request('search') ?? '' }}" 
+                                       placeholder="Masukan Lot No." 
+                                       class="form-control input-sm"
+                                       style="border-radius:6px;
+                                              padding:0.4rem 0.75rem;
+                                              border:1px solid #cbd5e1;
+                                              background:#f8fafc;
+                                              color:#1e293b;">
+                                <button type="submit" 
+                                        class="btn btn-primary btn-sm"
+                                        style="background:#0284c7;
+                                               border:none;
+                                               border-radius:6px;
+                                               padding:0.4rem 1rem;
+                                               font-weight:500;
+                                               box-shadow:0 2px 6px rgba(2,132,199,0.4);">
+                                    Cari
+                                </button>
                                 <a href="{{ route('web.dashboard.index') }}" 
-                                   class="btn btn-success btn-sm" style="vertical-align: middle;">Reset</a>
+                                   class="btn btn-success btn-sm"
+                                   style="background:#16a34a;
+                                          border:none;
+                                          border-radius:6px;
+                                          padding:0.4rem 1rem;
+                                          font-weight:500;
+                                          box-shadow:0 2px 6px rgba(22,163,74,0.4);">
+                                    Reset
+                                </a>
                             </form>
                         </div>
                         <div class="col-md-6 text-right">
-                            <form action="" method="GET" class="form-inline pull-right">
-                                <label for="start_date" class="control-label">Dari</label>
+                            <form action="" method="GET" class="form-inline pull-right" style="gap:0.5rem;">
+                                <label for="start_date" class="control-label" style="color:#475569;">Dari</label>
                                 <input type="date" 
-                                    name="start_date" 
-                                    id="start_date"
-                                    class="form-control input-sm" 
-                                    required>
-                                <label for="end_date" class="control-label" style="margin-left: 10px;">Sampai</label>
+                                    name="start_date" id="start_date"
+                                    class="form-control input-sm"
+                                    style="border-radius:6px;
+                                           border:1px solid #cbd5e1;
+                                           background:#f8fafc;
+                                           color:#1e293b;">
+                                <label for="end_date" class="control-label" style="margin-left:10px;color:#475569;">Sampai</label>
                                 <input type="date" 
-                                    name="end_date" 
-                                    id="end_date"
-                                    class="form-control input-sm" 
-                                    required>
+                                    name="end_date" id="end_date"
+                                    class="form-control input-sm"
+                                    style="border-radius:6px;
+                                           border:1px solid #cbd5e1;
+                                           background:#f8fafc;
+                                           color:#1e293b;">
                                 <button formaction="{{ route('web.label.export.excel') }}" 
-                                        class="btn btn-success btn-sm ms-2">
+                                        class="btn btn-success btn-sm"
+                                        style="background:#16a34a;
+                                               border:none;
+                                               border-radius:6px;
+                                               padding:0.4rem 1rem;
+                                               font-weight:500;
+                                               box-shadow:0 2px 6px rgba(22,163,74,0.4);">
                                     <i class="fa fa-file-excel-o"></i> Excel
                                 </button>
                                 <button formaction="{{ route('web.label.print') }}" 
                                         formtarget="_blank"
-                                        class="btn btn-info btn-sm ms-2">
+                                        class="btn btn-info btn-sm"
+                                        style="background:#0ea5e9;
+                                               border:none;
+                                               border-radius:6px;
+                                               padding:0.4rem 1rem;
+                                               font-weight:500;
+                                               box-shadow:0 2px 6px rgba(14,165,233,0.4);">
                                     <i class="fa fa-print"></i> Print
                                 </button>
                             </form>
                         </div>
                     </div>
+                    
+                    <!-- Table -->
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered">
-                                    <thead>
+                            <div class="table-responsive" style="border-radius:8px;overflow:hidden;">
+                                <table class="table table-striped table-bordered" 
+                                       style="margin:0;
+                                              background:#ffffff;
+                                              color:#1e293b;">
+                                    <thead style="background:#0284c7;color:#fff;">
                                         <tr>
                                             <th>No</th>
                                             <th>Lot No.</th>
@@ -208,20 +277,22 @@
                                                 <td>{{ $label->operator->name }}</td>
                                                 <td class="text-center" style="white-space: nowrap;">
                                                     <a href="{{ route('web.label.edit', $label->id) }}" 
-                                                       class="btn btn-xs btn-warning" title="Edit">
+                                                       class="btn btn-xs btn-warning"
+                                                       style="background:#f59e0b;border:none;border-radius:4px;color:#fff;">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                     <button title="Hapus" 
                                                             data-action="delete" 
                                                             data-href="{{ route('web.label.delete', $label->id) }}" 
-                                                            class="btn btn-danger btn-xs">
+                                                            class="btn btn-danger btn-xs"
+                                                            style="background:#dc2626;border:none;border-radius:4px;color:#fff;">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
                                                 </td>
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="11" class="text-center">Tidak ada label</td>
+                                                <td colspan="11" class="text-center" style="color:#475569;">Tidak ada label</td>
                                             </tr>
                                         @endforelse
                                     </tbody>
@@ -230,6 +301,7 @@
                         </div>
                     </div>
 
+                    <!-- Pagination -->
                     <div class="row">
                         <div class="col-md-12 text-center">
                             {{ $labels->links() }}
@@ -240,6 +312,8 @@
         </div>
     </div>
 </div>
+
+
 @endsection
 
 @push('styles')
@@ -289,80 +363,96 @@
         format: 'YYYY-MM-DD',
     });
 
-    function resetForm() {
-        //$("input#weight").val(null);
-        //$("input#length").val(null);
-        $("select#date").val(null);
-        $("select#shift").val(null);
-        $("select#machine_no").val(null);
-        // $("input[name=pitch]").val(null);
-        $("input#remark").val(null);
-        $("input#bobin_no").val(null);
-    }
+function resetForm() {
+    $("input#length").val(null);
+    $("input#weight").val(null);
+    $("select#date").val(null);
+    $("select#shift").val(null);
+    $("select#machine_no").val(null);
+    $("input[name=pitch]").prop('checked', false);
+    $("input#remark").val(null);
+    $("input#bobin_no").val(null);
+    $("input#lot_not").val(null);
+}
 
-    function initForm() {
-        $("form#form_print").on('submit', function(e) {
-            e.preventDefault();
-            var fail = false;
-            if($("input#length").val() == "" || $("input#length").val() == null) {
-                $("#label_length").addClass("has-error");
-                fail = true;
-            } else {
-                $("#label_length").removeClass("has-error");
-            }
+function initForm() {
+    $("form#form_print").on('submit', function(e) {
+        e.preventDefault();
+        var fail = false;
 
-            if($("select#date").val() == "" || $("select#date").val() == null) {
-                $("#label_date").addClass("has-error");
-                fail = true;
-            } else {
-                $("#label_date").removeClass("has-error");
-            }
+        // Length
+        if($("input#length").val() == "" || $("input#length").val() == null) {
+            $("#label_length").addClass("has-error");
+            fail = true;
+        } else {
+            $("#label_length").removeClass("has-error");
+        }
 
-            if($("select#shift").val() == "" || $("select#shift").val() == null) {
-                $("#label_shift").addClass("has-error");
-                fail = true;
-            } else {
-                $("#label_shift").removeClass("has-error");
-            }
+        // Weight
+        if($("input#weight").val() == "" || $("input#weight").val() == null) {
+            $("#label_weight").addClass("has-error");
+            fail = true;
+        } else {
+            $("#label_weight").removeClass("has-error");
+        }
 
-            if($("select#machine_no").val() == "" || $("select#machine_no").val() == null) {
-                $("#label_machine_no").addClass("has-error");
-                fail = true;
-            } else {
-                $("#label_machine_no").removeClass("has-error");
-            }
+        // Date
+        if($("select#date").val() == "" || $("select#date").val() == null) {
+            $("#label_date").addClass("has-error");
+            fail = true;
+        } else {
+            $("#label_date").removeClass("has-error");
+        }
 
-            // if($("input[name=pitch]").val() == "" || $("input[name=pitch]").val() == null) {
-            //     $("#label_pitch").addClass("has-error");
-            //     fail = true;
-            // } else {
-            //     $("#label_pitch").removeClass("has-error");
-            // }
+        // Lot No
+        if($("input#lot_not").val() == "" || $("input#lot_not").val() == null) {
+            $("#label_lot_not").addClass("has-error");
+            fail = true;
+        } else {
+            $("#label_lot_not").removeClass("has-error");
+        }
 
-            if($("input#remark").val() == "" || $("input#remark").val() == null) {
-                $("#label_remark").addClass("has-error");
-                fail = true;
-            } else {
-                $("#label_remark").removeClass("has-error");
-            }
+        // Shift
+        if($("select#shift").val() == "" || $("select#shift").val() == null) {
+            $("#label_shift").addClass("has-error");
+            fail = true;
+        } else {
+            $("#label_shift").removeClass("has-error");
+        }
 
-            if($("input#bobin_no").val() == "" || $("input#bobin_no").val() == null) {
-                $("#label_bobin_no").addClass("has-error");
-                fail = true;
-            } else {
-                $("#label_bobin_no").removeClass("has-error");
-            }
+        // Machine No
+        if($("select#machine_no").val() == "" || $("select#machine_no").val() == null) {
+            $("#label_machine_no").addClass("has-error");
+            fail = true;
+        } else {
+            $("#label_machine_no").removeClass("has-error");
+        }
 
-            if(!fail) {            
-                $(this).unbind("submit");
-                $(this).submit();
-                resetForm();
-                initForm();
-            }
-        });
-    }
+        // Remark
+        if($("input#remark").val() == "" || $("input#remark").val() == null) {
+            $("#label_remark").addClass("has-error");
+            fail = true;
+        } else {
+            $("#label_remark").removeClass("has-error");
+        }
 
-    initForm();
+        // Bobin No
+        if($("input#bobin_no").val() == "" || $("input#bobin_no").val() == null) {
+            $("#label_bobin_no").addClass("has-error");
+            fail = true;
+        } else {
+            $("#label_bobin_no").removeClass("has-error");
+        }
+
+        if(!fail) {            
+            $(this).unbind("submit");
+            $(this).submit();
+            resetForm();
+            initForm();
+        }
+    });
+}
+
 
     
     var now = new Date();
