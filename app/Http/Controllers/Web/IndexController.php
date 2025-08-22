@@ -63,7 +63,7 @@ class IndexController extends Controller
         return view('export.label', ['label' => $label]);
     }
 
-    /** 🔹 EDIT LABEL */
+    
     public function edit($label)
     {
         $label = Label::find($label);
@@ -74,7 +74,7 @@ class IndexController extends Controller
         return view('web.dashboard.edit', compact("label"));
     }
 
-    /** 🔹 UPDATE LABEL */
+    
     public function update(Request $req, $label)
     {
         $user = auth()->user();
@@ -104,7 +104,7 @@ class IndexController extends Controller
         return view('export.label', ['label' => $label]);
     }
 
-    /** 🔹 UPDATE HANYA FORMAT LOT */
+    
     public function updateOnly(Request $req, $label)
     {
         $user = auth()->user();
@@ -135,7 +135,7 @@ class IndexController extends Controller
         return redirect()->route("web.dashboard.index");
     }
 
-    /** 🔹 HAPUS LABEL */
+    
     public function delete($label)
     {
         $label = Label::find($label);
@@ -146,7 +146,7 @@ class IndexController extends Controller
         return redirect()->route('web.dashboard.index');
     }
 
-    /** 🔹 EXPORT EXCEL (pakai streaming biar hemat memori) */
+    
     public function exportExcel(Request $request)
     {
         $startDate = $request->start_date;
@@ -154,11 +154,10 @@ class IndexController extends Controller
 
         return Excel::download(
             new LabelExport($startDate, $endDate),
-            'data_label.xlsx'
+            'data_label_.xlsx'
         );
     }
 
-    /** 🔹 EXPORT PDF */
     public function exportPDF(Request $request)
     {
         ini_set('max_execution_time', 120);
