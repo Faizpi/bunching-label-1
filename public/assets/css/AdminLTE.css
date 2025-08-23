@@ -131,7 +131,7 @@ body {
 .hold-transition .main-header .navbar,
 .hold-transition .main-header .logo,
 .hold-transition .menu-open .fa-angle-left {
-  /* Fix for IE */
+  
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
