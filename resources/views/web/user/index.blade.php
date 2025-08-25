@@ -3,45 +3,111 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12">
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title v-align-middle">Data Pengguna</h3>
+        <div class="box" 
+             style="background:#ffffff;
+                    border-radius:10px;
+                    border:1px solid #e5e7eb;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+                    overflow:hidden;">
+            
+            <!-- Header -->
+            <div class="box-header with-border d-flex justify-content-between align-items-center" 
+                 style="background:#0284c7;
+                        color:#fff;
+                        padding:1rem 1.5rem;
+                        border-bottom:1px solid #e5e7eb;">
+                <h3 class="box-title v-align-middle" 
+                    style="margin:0;font-weight:600;font-size:17px;">
+                    Data Pengguna
+                </h3>
 
-                <a href="{{route('web.user.create')}}" class="btn btn-primary btn-sm pull-right">Tambah</a href="#">
-                <!-- <a href="{{route('web.user.bulk_import')}}" style="margin-right: 7px;" class="btn btn-success btn-sm pull-right">Import</a href="#"> -->
+                <a href="{{route('web.user.create')}}" 
+                class="btn btn-sm"
+                style="float:right;
+                        background:#ffffff;
+                        color:#0284c7;
+                        border:none;
+                        font-weight:600;
+                        border-radius:6px;
+                        padding:0.4rem 1rem;
+                        box-shadow:0 2px 6px rgba(255,255,255,0.2);">
+                    <i class="fa fa-plus"></i> Tambah
+                </a>
+
             </div>
-            <div class="box-body">
+            
+            <!-- Body -->
+            <div class="box-body" style="padding:1.5rem;color:#1e293b;">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-2">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label class="sr-only" for="search">Pencarian</label>
-                                    <input type="text" placeholder="Masukan No. ID" class="form-control input-sm" name="search" id="search">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-sm">Cari</button>
+                    <div class="row mb-3">
+                        <div class="col-sm-12 col-md-3">
+                            <form class="form-inline" style="gap:0.5rem;">
+                                <input type="text" placeholder="Masukan No. ID" 
+                                       class="form-control input-sm"
+                                       style="border-radius:6px;
+                                              padding:0.4rem 0.75rem;
+                                              border:1px solid #cbd5e1;
+                                              background:#f8fafc;
+                                              color:#1e293b;">
+                                <button type="submit" 
+                                        class="btn btn-sm"
+                                        style="background:#0284c7;
+                                               border:none;
+                                               border-radius:6px;
+                                               padding:0.4rem 1rem;
+                                               font-weight:500;
+                                               color:#fff;
+                                               box-shadow:0 2px 6px rgba(2,132,199,0.4);">
+                                    Cari
+                                </button>
                             </form>
                         </div>
 
-                        <div class="col-sm-12 col-md-10">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label class="sr-only" for="role">Role</label>
-                                    <select class="form-control input-sm" name="role" id="role">
-                                        <option value="" selected="">Semua Role</option>
-                                        @foreach(\App\Constans\UserRole::LIST as $i => $role)
-                                            <option value="{{$i}}" {{!is_null(\Request::get('role')) && \Request::get('role') == $i ? 'selected':''}}>{{ucfirst($role)}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-sm">Filter</button>
-                                <a href="{{route('web.user.index')}}" class="btn btn-default btn-sm">Reset</a>
+                        <div class="col-sm-12 col-md-9 text-end">
+                            <form class="form-inline d-flex justify-content-end" style="gap:0.5rem;">
+                                <select class="form-control form-control-sm"
+                                        style="border-radius:6px;
+                                               border:1px solid #cbd5e1;
+                                               background:#f8fafc;
+                                               color:#1e293b;">
+                                    <option value="" selected="">Semua Role</option>
+                                    @foreach(\App\Constans\UserRole::LIST as $i => $role)
+                                        <option value="{{$i}}" {{!is_null(\Request::get('role')) && \Request::get('role') == $i ? 'selected':''}}>{{ucfirst($role)}}</option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" 
+                                        class="btn btn-sm"
+                                        style="background:#0284c7;
+                                               border:none;
+                                               border-radius:6px;
+                                               padding:0.4rem 1rem;
+                                               font-weight:500;
+                                               color:#fff;
+                                               box-shadow:0 2px 6px rgba(2,132,199,0.4);">
+                                    Filter
+                                </button>
+                                <a href="{{route('web.user.index')}}" 
+                                   class="btn btn-sm"
+                                   style="background:#f1f5f9;
+                                          border:none;
+                                          border-radius:6px;
+                                          padding:0.4rem 1rem;
+                                          font-weight:500;
+                                          color:#475569;">
+                                    Reset
+                                </a>
                             </form>
                         </div>
                     </div>
+
                     <div class="row table-responsive">
-                        <table class="table table-striped table-hovered">
-                            <thead>
+                        <table class="table table-striped table-bordered align-middle" 
+                               style="margin:0;
+                                      border-radius:8px;
+                                      overflow:hidden;
+                                      background:#ffffff;
+                                      color:#1e293b;">
+                            <thead style="background:#0284c7;color:#fff;">
                                 <tr>
                                     <th>No</th>
                                     <th>Name</th>
@@ -53,18 +119,42 @@
                             </thead>
                             <tbody>
                                 @foreach($users as $i => $user)
-                                    <tr>
+                                    <tr style="transition:all .2s ease;" 
+                                        onmouseover="this.style.backgroundColor='rgba(2,132,199,0.05)'" 
+                                        onmouseout="this.style.backgroundColor=''">
                                         <td>{{($i+1)}}</td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->nsk}}</td>
                                         <td>{{date('d F Y', strtotime($user->created_at))}}</td>
-                                        <td>{{\App\Constans\UserRole::getString($user->role)}}</td>
+                                        <td>
+                                            <span style="background:#0284c7;
+                                                         color:#fff;
+                                                         padding:0.2rem 0.6rem;
+                                                         border-radius:12px;
+                                                         font-size:0.75rem;">
+                                                {{\App\Constans\UserRole::getString($user->role)}}
+                                            </span>
+                                        </td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Button action">
-                                                <a title="Edit" href="{{route('web.user.edit', [$user->id])}}" class="btn btn-warning btn-sm">
+                                                <a title="Edit" 
+                                                   href="{{route('web.user.edit', [$user->id])}}" 
+                                                   class="btn btn-sm"
+                                                   style="background:#f59e0b;
+                                                          border:none;
+                                                          border-radius:6px;
+                                                          color:#fff;">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                <button title="Hapus" data-action="delete" data-href="{{route('web.user.delete', [$user->id])}}" class="btn btn-danger btn-sm">
+                                                <button title="Hapus" 
+                                                        data-action="delete" 
+                                                        data-href="{{route('web.user.delete', [$user->id])}}" 
+                                                        class="btn btn-sm"
+                                                        style="background:#dc2626;
+                                                               border:none;
+                                                               border-radius:6px;
+                                                               color:#fff;
+                                                               margin-left:5px;">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </div>
@@ -94,9 +184,9 @@
         Swal.fire({
             title: 'Anda yakin akan menghapus data ?',
             text: "Hal ini tidak dapat di urungkan",
-            type: 'warning',
+            icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#0284c7',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Hapus',
             cancelButtonText: 'Batal'
