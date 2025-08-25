@@ -146,7 +146,6 @@ class IndexController extends Controller
         return redirect()->route('web.dashboard.index');
     }
 
-    
     public function exportExcel(Request $request)
     {
         $startDate = $request->start_date;
