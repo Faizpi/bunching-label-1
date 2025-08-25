@@ -237,18 +237,21 @@
                                 </button>
                             </form>
                         </div>
-                    </div>
-                    
+                    </div> 
                     <!-- Table -->
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="table-responsive" style="border-radius:8px;overflow:hidden;margin-top:20px;">
+                            <div class="table-responsive" 
+                                style="border-radius:8px;
+                                        overflow-x:auto; 
+                                        -webkit-overflow-scrolling: touch; 
+                                        margin-top:20px;">
                                 <table class="table table-striped table-bordered" 
-                                       style="margin:0;
-                                              background:#ffffff;
-                                              color:#1e293b;
-                                              ">
-                                    <thead style="background:#0284c7;color:#fff;">
+                                    style="margin:0;
+                                            background:#ffffff;
+                                            color:#1e293b;
+                                            min-width:1000px;">
+                                    <thead style="background:#0284c7;color:#fff;position:sticky;top:0;z-index:5;">
                                         <tr>
                                             <th>No</th>
                                             <th>Lot No.</th>
@@ -278,8 +281,8 @@
                                                 <td>{{ $label->operator->name }}</td>
                                                 <td class="text-center" style="white-space: nowrap;">
                                                     <a href="{{ route('web.label.edit', $label->id) }}" 
-                                                       class="btn btn-xs btn-warning"
-                                                       style="background:#f59e0b;border:none;border-radius:4px;color:#fff;">
+                                                    class="btn btn-xs btn-warning"
+                                                    style="background:#f59e0b;border:none;border-radius:4px;color:#fff;">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                     <button title="Hapus" 
@@ -301,7 +304,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Pagination -->
                     <div class="row">
                         <div class="col-md-12 text-center">
