@@ -35,24 +35,22 @@
 		</style>
 		@stack('styles')
 
-<div class="wrapper">
-    <!-- Header -->
-    @include('web.layout.header')
+		<div class="wrapper">
+			<!-- Header -->
+			@include('web.layout.header')
 
-    <!-- Sidebar -->
-    @include('web.layout.sidebar')
+			<!-- Sidebar -->
+			@include('web.layout.sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" 
-         style="margin-top:40px; padding:10px;">
-        <!-- Main content -->
-        <section class="content">
-            @yield('content')
-        </section>
-    </div>
-</div>
-
-
+			<!-- Content Wrapper. Contains page content -->
+			<div class="content-wrapper" 
+				style="margin-top:40px; padding:10px;">
+				<!-- Main content -->
+				<section class="content">
+					@yield('content')
+				</section>
+			</div>
+		</div>
             @include('web.layout.footer')
         </div>
 
