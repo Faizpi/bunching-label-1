@@ -67,6 +67,20 @@
 
 <!-- Inline CSS -->
 <style>
+    .main-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%; /* biar sepanjang layar */
+    overflow-y: auto; /* kalau isi sidebar kepanjangan, bisa discroll sendiri */
+    background: #fff !important;
+    z-index: 1000; /* pastikan selalu di atas konten */
+}
+.content-wrapper, 
+.main-footer,  {
+    margin-left: 230px; /* samakan dengan lebar sidebar */
+}
+
     .main-sidebar .user-panel .info p {
         color: #0284c7;   
         font-weight: bold;

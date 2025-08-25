@@ -4,7 +4,6 @@
     <title>Cetak Data Label</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <style>
-        title { font-size: 24px; margin: 20px; }
         body { font-size: 12px; margin: 20px; }
         h4 { margin-bottom: 20px; }
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
