@@ -13,7 +13,7 @@
 </head>
 <body onload="window.print()">
 
-    <h4 class="text-center">Laporan Data Label</h4>
+    <h1 class="text-center">Laporan Data Label</h1>
     @if($start && $end)
         <p class="text-center">Periode: {{ $start }} s/d {{ $end }}</p>
     @endif
