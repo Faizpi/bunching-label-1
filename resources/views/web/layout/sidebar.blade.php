@@ -67,22 +67,18 @@
 
 <!-- Inline CSS -->
 <style>
-     /* Ubah style teks nama akun */
     .main-sidebar .user-panel .info p {
-        color: #0284c7;   /* warna teks nama */
+        color: #0284c7;   
         font-weight: bold;
         font-size: 14px;
     }
-
-    /* Ubah style teks status online/offline */
     .main-sidebar .user-panel .info a {
-        color: #666;      /* warna teks status */
+        color: #666;      
         font-size: 12px;
-    }
-     /* ubah warna background MAIN MENU header */
+    }  
     .main-sidebar .sidebar-menu .header {
-        background-color: #0284c7 !important; /* ganti dengan warna yang kamu mau */
-        color: #fff !important; /* teks putih biar kontras */
+        background-color: #0284c7 !important; 
+        color: #fff !important; 
         font-weight: bold;
     }
     .main-sidebar {

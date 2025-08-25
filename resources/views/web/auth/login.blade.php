@@ -23,19 +23,16 @@
 		font-family: 'Source Sans Pro', sans-serif;
 	}
 
-	/* Wrapper utama */
 	.login-box {
 		margin: 6% auto;
 		width: 100%;
-		max-width: 380px; /* lebih slim */
+		max-width: 380px; 
 		color: #f8fafc;
 		padding: 20px;
 		border-radius: 12px;
 		box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 		text-align: center;
 	}
-
-	/* Logo & Company Name */
 	.login-logo {
 		text-align: center;
 		margin-bottom: 15px;
@@ -57,8 +54,6 @@
 		display: block;
 		margin-top: 2px;
 	}
-
-	/* Body form */
 	.login-box-body {
 		background: #ffffff;
 		border-radius: 10px;
@@ -66,8 +61,6 @@
 		box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
 		text-align: left;
 	}
-
-	/* Input */
 	.form-control {
 		border-radius: 6px;
 		box-shadow: none;
@@ -79,8 +72,6 @@
 		border-color: #376bdc;
 		box-shadow: 0 0 4px rgba(55,107,220,0.4);
 	}
-
-	/* Button */
 	.btn-primary {
 		background: #376bdc;
 		border: none;
@@ -93,8 +84,6 @@
 	.btn-primary:hover {
 		background: #274bb5;
 	}
-
-	/* Text */
 	.login-box-msg {
 		font-size: 14px;
 		margin-bottom: 18px;
