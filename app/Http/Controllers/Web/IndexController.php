@@ -183,19 +183,20 @@ class IndexController extends Controller
 
     public function printView(Request $request)
     {
-    $start = $request->input('start_date');
-    $end   = $request->input('end_date');
+        $start = $request->input('start_date');
+        $end   = $request->input('end_date');
 
-    $query = Label::with('operator');
+        $query = Label::with('operator');
 
-    if ($start && $end) {
-        $query->whereBetween('shift_date', [$start, $end]);
+        if ($start && $end) {
+            $query->whereBetween('shift_date', [$start, $end]);
+        }
+
+        $labels = $query->orderBy('created_at', 'desc')->get();
+
+        return view('web.label.print', compact('labels', 'start', 'end'));
     }
 
-    $labels = $query->get();
-
-    return view('web.label.print', compact('labels', 'start', 'end'));
-    }
 
     /** Helpers */
     private function getIncrement($machine_number)
