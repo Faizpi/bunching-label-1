@@ -1,5 +1,5 @@
 <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar" style="background:linear-gradient(180deg,#1e293b,#334155);color:#f8fafc;">
+<aside class="main-sidebar" style="background:#fff;">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
@@ -64,3 +64,47 @@
     </section>
     <!-- /.sidebar -->
 </aside>
+
+<!-- Inline CSS -->
+<style>
+     /* Ubah style teks nama akun */
+    .main-sidebar .user-panel .info p {
+        color: #0284c7;   /* warna teks nama */
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    /* Ubah style teks status online/offline */
+    .main-sidebar .user-panel .info a {
+        color: #666;      /* warna teks status */
+        font-size: 12px;
+    }
+     /* ubah warna background MAIN MENU header */
+    .main-sidebar .sidebar-menu .header {
+        background-color: #0284c7 !important; /* ganti dengan warna yang kamu mau */
+        color: #fff !important; /* teks putih biar kontras */
+        font-weight: bold;
+    }
+    .main-sidebar {
+        background: #fff !important;
+    }
+    .main-sidebar .sidebar-menu > li > a {
+        color: #333 !important;
+    }
+    .main-sidebar .sidebar-menu > li > a:hover {
+        background-color: #0284c7 !important;
+        color: #fff !important;
+    }
+    .main-sidebar .treeview-menu > li > a {
+        color: #444 !important;
+    }
+    .main-sidebar .treeview-menu > li > a:hover {
+        background-color: #0284c7 !important;
+        color: #fff !important;
+    }
+    .main-sidebar .sidebar-menu > li.active > a,
+    .main-sidebar .treeview-menu > li.active > a {
+        background-color: #0284c7 !important;
+        color: #fff !important;
+    }
+</style>

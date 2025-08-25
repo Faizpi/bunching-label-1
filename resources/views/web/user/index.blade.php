@@ -12,12 +12,12 @@
             
             <!-- Header -->
             <div class="box-header with-border d-flex justify-content-between align-items-center" 
-                 style="background:#0284c7;
+                 style="background:white;
                         color:#fff;
                         padding:1rem 1.5rem;
                         border-bottom:1px solid #e5e7eb;">
                 <h3 class="box-title v-align-middle" 
-                    style="margin:0;font-weight:600;font-size:17px;">
+                    style="margin:0;font-weight:600;font-size:17px;color:black;">
                     Data Pengguna
                 </h3>
 
@@ -106,7 +106,8 @@
                                       border-radius:8px;
                                       overflow:hidden;
                                       background:#ffffff;
-                                      color:#1e293b;">
+                                      color:#1e293b;
+                                      margin-top:20px;">
                             <thead style="background:#0284c7;color:#fff;">
                                 <tr>
                                     <th>No</th>

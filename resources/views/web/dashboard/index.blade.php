@@ -147,18 +147,18 @@
             
             <!-- Header -->
             <div class="box-header with-border" 
-                 style="background:#0284c7;
+                 style="background:white;
                         color:#fff;
                         padding:1rem 1.5rem;
                         border-bottom:1px solid #e5e7eb;">
                 <h2 class="box-title v-align-middle" 
-                    style="margin:0;font-weight:600;font-size:17px;letter-spacing:0.3px;">
+                    style="margin:0;font-weight:600;font-size:17px;letter-spacing:0.3px;color:black;">
                     Data Label
                 </h2>
             </div>
             
             <!-- Body -->
-            <div class="box-body" style="padding:1.5rem;color:#1e293b;">
+            <div class="box-body" style="padding:1.5rem;color:white;">
                 <div class="container-fluid">
                     
                     <!-- Search & Filter -->
@@ -242,11 +242,12 @@
                     <!-- Table -->
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="table-responsive" style="border-radius:8px;overflow:hidden;">
+                            <div class="table-responsive" style="border-radius:8px;overflow:hidden;margin-top:20px;">
                                 <table class="table table-striped table-bordered" 
                                        style="margin:0;
                                               background:#ffffff;
-                                              color:#1e293b;">
+                                              color:#1e293b;
+                                              ">
                                     <thead style="background:#0284c7;color:#fff;">
                                         <tr>
                                             <th>No</th>
