@@ -71,14 +71,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%; /* biar sepanjang layar */
-    overflow-y: auto; /* kalau isi sidebar kepanjangan, bisa discroll sendiri */
+    height: 100%; 
+    overflow-y: auto; 
     background: #fff !important;
-    z-index: 1000; /* pastikan selalu di atas konten */
+    z-index: 1000; 
 }
 .content-wrapper, 
 .main-footer,  {
-    margin-left: 230px; /* samakan dengan lebar sidebar */
+    margin-left: 230px; 
 }
 
     .main-sidebar .user-panel .info p {
