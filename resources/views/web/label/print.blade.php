@@ -21,22 +21,32 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Lot No.</th>
+                <th>ID</th>
+                <th>Lot Number</th>
+                <th>Formatted Lot Number</th>
+                <th>Size</th>
                 <th>Length</th>
                 <th>Weight</th>
-                <th>Date</th>
+                <th>Shift Date</th>
                 <th>Shift</th>
-                <th>Mesin No</th>
+                <th>Machine Number</th>
                 <th>Pitch</th>
                 <th>Direction</th>
-                <th>Operator</th>
+                <th>Visual</th>
+                <th>Remark</th>
+                <th>Bobin No</th>
+                <th>Operator Name</th>
+                <th>Created At</th>
             </tr>
         </thead>
         <tbody>
             @forelse($labels as $label)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
+                    <td>{{ $label->id }}</td>
                     <td>{{ $label->lot_number }}</td>
+                    <td>{{ $label->formated_lot_number }}</td>
+                    <td>{{ $label->size }}</td>
                     <td>{{ $label->length }} M</td>
                     <td>{{ $label->weight }} KG</td>
                     <td>{{ $label->shift_date }}</td>
@@ -44,10 +54,14 @@
                     <td>{{ $label->machine_number }}</td>
                     <td>{{ $label->pitch }}</td>
                     <td>{{ $label->direction }}</td>
-                    <td>{{ $label->operator->name }}</td>
+                    <td>{{ $label->visual }}</td>
+                    <td>{{ $label->remark }}</td>
+                    <td>{{ $label->bobin_no }}</td>
+                    <td>{{ $label->operator->name ?? '-' }}</td>
+                    <td>{{ $label->created_at }}</td>
                 </tr>
             @empty
-                <tr><td colspan="10">Tidak ada data</td></tr>
+                <tr><td colspan="17">Tidak ada data</td></tr>
             @endforelse
         </tbody>
     </table>

@@ -12,7 +12,7 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label for="size">Type/Size</label>
-                    <input type="text" name="size" class="form-control" id="size" value="CONTOH AJA" readonly>
+                    <input type="text" name="size" class="form-control" id="size" value="AVSS 2.0 SQ 37/0.260" readonly>
                 </div>
                 <div id="label_length" class="form-group">
                     <label for="length">Length (meter)</label>
