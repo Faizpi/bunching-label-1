@@ -108,7 +108,7 @@
                 </div>
                 <div id="label_bobin_no" class="form-group">
                     <label for="bobin_no">No Bobin</label>
-                    <input type="number" name="bobin_no" value="" class="form-control" id="bobin_no" placeholder="No Bobin" required>
+                    <input type="text" name="bobin_no" value="" class="form-control" id="bobin_no" placeholder="No Bobin" required>
                 </div>
             </div>
         </div>
