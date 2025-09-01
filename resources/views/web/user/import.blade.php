@@ -10,7 +10,7 @@
             </div>
             <div class="box-body">
                 @if($errors->any())
-                    <div class="alert alert-danger" role="alert">{{$errors->first()}}</div>
+                <div class="alert alert-danger" role="alert">{{$errors->first()}}</div>
                 @endif
                 <form method="POST" enctype="multipart/form-data" action="{{ route('web.user.bulk_import_post') }}">
                     <div class="row">

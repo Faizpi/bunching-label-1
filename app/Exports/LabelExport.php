@@ -11,7 +11,7 @@ class LabelExport implements FromCollection, WithHeadings, WithMapping
 {
     protected $startDate;
     protected $endDate;
-    protected $rowNumber = 0; 
+    protected $rowNumber = 0;
 
     public function __construct($startDate = null, $endDate = null)
     {
@@ -39,10 +39,10 @@ class LabelExport implements FromCollection, WithHeadings, WithMapping
             'users.name as operator_name',
             'labels.created_at'
         )
-        ->leftJoin('users', 'labels.operator_id', '=', 'users.id')
-        ->orderBy('labels.id', 'desc');
+            ->leftJoin('users', 'labels.operator_id', '=', 'users.id')
+            ->orderBy('labels.id', 'desc');
 
-        
+
         if ($this->startDate && $this->endDate) {
             $query->whereBetween('labels.shift_date', [$this->startDate, $this->endDate]);
         }
@@ -53,7 +53,7 @@ class LabelExport implements FromCollection, WithHeadings, WithMapping
     public function headings(): array
     {
         return [
-            'No', 
+            'No',
             'ID',
             'Lot Number',
             'Formatted Lot Number',
@@ -75,10 +75,10 @@ class LabelExport implements FromCollection, WithHeadings, WithMapping
 
     public function map($row): array
     {
-        $this->rowNumber++; 
+        $this->rowNumber++;
 
         return [
-            $this->rowNumber, 
+            $this->rowNumber,
             $row->id,
             "'" . $row->lot_number,
             "'" . $row->formated_lot_number,

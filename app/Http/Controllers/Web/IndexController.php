@@ -25,7 +25,7 @@ class IndexController extends Controller
         // }
 
         if ($req->filled('search') || $req->search === "0") {
-            $labels->where('lot_number', 'like', '%'.$req->search.'%');
+            $labels->where('lot_number', 'like', '%' . $req->search . '%');
         }
 
         $labels = $labels->paginate(10);
@@ -63,7 +63,7 @@ class IndexController extends Controller
         return view('export.label', ['label' => $label]);
     }
 
-    
+
     public function edit($label)
     {
         $label = Label::find($label);
@@ -74,7 +74,7 @@ class IndexController extends Controller
         return view('web.dashboard.edit', compact("label"));
     }
 
-    
+
     public function update(Request $req, $label)
     {
         $user = auth()->user();
@@ -104,7 +104,7 @@ class IndexController extends Controller
         return view('export.label', ['label' => $label]);
     }
 
-    
+
     public function updateOnly(Request $req, $label)
     {
         $user = auth()->user();
@@ -135,7 +135,7 @@ class IndexController extends Controller
         return redirect()->route("web.dashboard.index");
     }
 
-    
+
     public function delete($label)
     {
         $label = Label::find($label);
@@ -175,7 +175,7 @@ class IndexController extends Controller
         $labels = $query->orderBy('id', 'desc')->limit(1024)->get();
 
         $pdf = Pdf::loadView('export.label_pdf', compact('labels'))
-                ->setPaper('a4', 'landscape');
+            ->setPaper('a4', 'landscape');
 
         return $pdf->download('data_label.pdf');
     }
@@ -223,9 +223,9 @@ class IndexController extends Controller
     private function pharseLastNumber($number)
     {
         if ($number < 10) {
-            return '00'.$number;
+            return '00' . $number;
         } elseif ($number < 100) {
-            return '0'.$number;
+            return '0' . $number;
         }
         return $number;
     }

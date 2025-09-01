@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Data Label PDF</title>
     <style>
@@ -8,15 +9,20 @@
             border-collapse: collapse;
             font-size: 12px;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid black;
             padding: 5px;
         }
+
         th {
             background: #f2f2f2;
         }
     </style>
 </head>
+
 <body>
     <h2 style="text-align: center;">Data Label</h2>
     <table>
@@ -64,4 +70,5 @@
         </tbody>
     </table>
 </body>
+
 </html>

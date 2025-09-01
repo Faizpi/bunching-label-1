@@ -16,49 +16,49 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN MENU</li>
             @foreach(config('sidebar') as $menu)
-                @if(Auth::user()->{"is{$menu->allowed}"}())
-                    @if(!$menu->tree)
-                        <li class="{{ strtolower(Request::segment($menu->identifier->segment)) === $menu->identifier->path ? 'active':'' }}">
-                            <a href="{{$menu->route ? route($menu->route) : '#'}}{{ $menu->query }}">
-                                <i class="{{$menu->icon}}"></i>&nbsp;
-                                <span>{{$menu->title}}</span>
-                            </a>
-                        </li>
-                    @else
-                        <li class="{{ strtolower(Request::segment($menu->identifier->segment)) === $menu->identifier->path ? 'active menu-open ':'' }}treeview">
-                            <a href="{{$menu->route ? route($menu->route) : '#'}}{{ $menu->query }}">
-                                <i class="{{$menu->icon}}"></i>&nbsp;
-                                <span>{{$menu->title}}</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                @foreach($menu->tree as $tree)
-                                    <?php
-                                        $active = false;
-                                        $parse_url = parse_url(\Request::fullUrl());
-                                        if (\Request::has('p')) {
-                                            if(strtolower($tree->query) == '?'.$parse_url['query']) {
-                                                $active = true;
-                                            }
-                                        } else {
-                                            if (strtolower(Request::segment($tree->identifier->segment)) === $tree->identifier->path) {
-                                                $active = true;
-                                            }
-                                        }
-                                    ?>
-                                    <li class="{{ $active ? 'active':'' }}">
-                                        <a href="{{$tree->route ? route($tree->route) : '#'}}{{ $tree->query }}">
-                                            <i class="{{$tree->icon}}"></i>&nbsp;
-                                            {{$tree->title}}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-                    @endif
-                @endif
+            @if(Auth::user()->{"is{$menu->allowed}"}())
+            @if(!$menu->tree)
+            <li class="{{ strtolower(Request::segment($menu->identifier->segment)) === $menu->identifier->path ? 'active':'' }}">
+                <a href="{{$menu->route ? route($menu->route) : '#'}}{{ $menu->query }}">
+                    <i class="{{$menu->icon}}"></i>&nbsp;
+                    <span>{{$menu->title}}</span>
+                </a>
+            </li>
+            @else
+            <li class="{{ strtolower(Request::segment($menu->identifier->segment)) === $menu->identifier->path ? 'active menu-open ':'' }}treeview">
+                <a href="{{$menu->route ? route($menu->route) : '#'}}{{ $menu->query }}">
+                    <i class="{{$menu->icon}}"></i>&nbsp;
+                    <span>{{$menu->title}}</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    @foreach($menu->tree as $tree)
+                    <?php
+                    $active = false;
+                    $parse_url = parse_url(request()->fullUrl());
+                    if (request()->has('p')) {
+                        if (strtolower($tree->query) == '?' . $parse_url['query']) {
+                            $active = true;
+                        }
+                    } else {
+                        if (strtolower(request()->segment($tree->identifier->segment)) === $tree->identifier->path) {
+                            $active = true;
+                        }
+                    }
+                    ?>
+                    <li class="{{ $active ? 'active':'' }}">
+                        <a href="{{$tree->route ? route($tree->route) : '#'}}{{ $tree->query }}">
+                            <i class="{{$tree->icon}}"></i>&nbsp;
+                            {{$tree->title}}
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
+            </li>
+            @endif
+            @endif
             @endforeach
         </ul>
     </section>
@@ -68,52 +68,58 @@
 <!-- Inline CSS -->
 <style>
     .main-sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%; 
-    overflow-y: auto; 
-    background: #fff !important;
-    z-index: 1000; 
-}
-.content-wrapper, 
-.main-footer,  {
-    margin-left: 230px; 
-}
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        overflow-y: auto;
+        background: #fff !important;
+        z-index: 1000;
+    }
+
+
 
     .main-sidebar .user-panel .info p {
-        color: #0284c7;   
+        color: #0284c7;
         font-weight: bold;
         font-size: 14px;
     }
+
     .main-sidebar .user-panel .info a {
-        color: #666;      
+        color: #666;
         font-size: 12px;
-    }  
+    }
+
     .main-sidebar .sidebar-menu .header {
-        background-color: #0284c7 !important; 
-        color: #fff !important; 
+        background-color: #0284c7 !important;
+        color: #fff !important;
         font-weight: bold;
     }
+
     .main-sidebar {
         background: #fff !important;
     }
-    .main-sidebar .sidebar-menu > li > a {
+
+    .main-sidebar .sidebar-menu>li>a {
         color: #333 !important;
     }
-    .main-sidebar .sidebar-menu > li > a:hover {
+
+    .main-sidebar .sidebar-menu>li>a:hover {
         background-color: #0284c7 !important;
         color: #fff !important;
     }
-    .main-sidebar .treeview-menu > li > a {
+
+    .main-sidebar .treeview-menu>li>a {
         color: #444 !important;
     }
-    .main-sidebar .treeview-menu > li > a:hover {
+
+    .main-sidebar .treeview-menu>li>a:hover {
         background-color: #0284c7 !important;
         color: #fff !important;
     }
-    .main-sidebar .sidebar-menu > li.active > a,
-    .main-sidebar .treeview-menu > li.active > a {
+
+    .main-sidebar .sidebar-menu>li.active>a,
+    .main-sidebar .treeview-menu>li.active>a {
         background-color: #0284c7 !important;
         color: #fff !important;
     }
