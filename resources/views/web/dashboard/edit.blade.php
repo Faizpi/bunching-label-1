@@ -65,91 +65,104 @@
         <div class="panel panel-default" style="background: rgba(255, 255, 255, 0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(31,38,135,0.37); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
             <div class="panel-body">
                 <div id="label_pitch" class="form-group">
-                    <label for="pitch">Pitch</label>
-                    <div class="radio">
-                        <label>
-                            <input name="pitch" value="20.25" type="radio" {{$label->pitch == 20.25 ? "checked":""}} required> 20.25
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input name="pitch" value="22.50" type="radio" {{$label->pitch == 22.50 ? "checked":""}}> 22.50
-                        </label>
-                    </div>
+                <label for="pitch">Pitch</label>
+                <div class="radio">
+                    <label>
+                        <input name="pitch" value="20.25" type="radio" 
+                            {{$label->pitch == 20.25 ? "checked":""}} required
+                            style="accent-color:#0284c7 !important;"> 
+                        20.25
+                    </label>
                 </div>
-                <div class="form-group">                        
-                    <label for="direction">Direction</label>
-                    <div class="radio">
-                        <label>
-                            <input name="direction" value="S" type="radio" {{$label->direction == "S" ? "checked":""}} required> S
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input name="direction" value="Z" type="radio" {{$label->direction == "Z" ? "checked":""}}> Z
-                        </label>
-                    </div>
-                </div>        
-                <div class="form-group">
-                    <label for="visual">Visual</label>
-                    <div class="radio">
-                        <label>
-                            <input name="visual" value="OK" type="radio" {{$label->visual == "OK" ? "checked":""}} required> OK
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input name="visual" value="NG" type="radio" {{$label->visual == "NG" ? "checked":""}}> NG
-                        </label>
-                    </div>
+                <div class="radio">
+                    <label>
+                        <input name="pitch" value="22.50" type="radio" 
+                            {{$label->pitch == 22.50 ? "checked":""}}
+                            style="accent-color:#0284c7 !important;"> 
+                        22.50
+                    </label>
                 </div>
-                <div id="label_remark" class="form-group">
-                    <label for="remark">Remark</label>
-                    <input type="text" name="remark" value="{{$label->remark}}" class="form-control" id="remark" placeholder="Remark" required>
+            </div>
+            <div class="form-group">                        
+                <label for="direction">Direction</label>
+                <div class="radio">
+                    <label>
+                        <input name="direction" value="S" type="radio" 
+                            {{$label->direction == "S" ? "checked":""}} required
+                            style="accent-color:#0284c7 !important;"> 
+                        S
+                    </label>
                 </div>
-                <div id="label_bobin_no" class="form-group">
-                    <label for="bobin_no">No Bobin</label>
-                    <input type="text" name="bobin_no" value="{{$label->bobin_no}}" class="form-control" id="bobin_no" placeholder="No Bobin" required>
+                <div class="radio">
+                    <label>
+                        <input name="direction" value="Z" type="radio" 
+                            {{$label->direction == "Z" ? "checked":""}}
+                            style="accent-color:#0284c7 !important;"> 
+                        Z
+                    </label>
                 </div>
+            </div>        
+            <div class="form-group">
+                <label for="visual">Visual</label>
+                <div class="radio">
+                    <label>
+                        <input name="visual" value="OK" type="radio" 
+                            {{$label->visual == "OK" ? "checked":""}} required
+                            style="accent-color:#0284c7 !important;"> 
+                        OK
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input name="visual" value="NG" type="radio" 
+                            {{$label->visual == "NG" ? "checked":""}}
+                            style="accent-color:#0284c7 !important;"> 
+                        NG
+                    </label>
+                </div>
+            </div>
+            <div id="label_remark" class="form-group">
+                <label for="remark">Remark</label>
+                <input type="text" name="remark" value="{{$label->remark}}" 
+                    class="form-control" id="remark" placeholder="Remark" required>
+            </div>
+            <div id="label_bobin_no" class="form-group">
+                <label for="bobin_no">No Bobin</label>
+                <input type="text" name="bobin_no" value="{{$label->bobin_no}}" 
+                    class="form-control" id="bobin_no" placeholder="No Bobin" required>
             </div>
         </div>
     </div>    
 </div>
 
         <div class="row">
-    <div class="col-sm-12 col-md-8 col-md-offset-2">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <button id="save_and_print" type="button" class="btn btn-success btn-block"
-                    style="background:rgba(240, 183, 13, 1) !important;
-                           border:none !important;
-                           color:#fff !important;
-                           font-weight:600;
-                           box-shadow:0 4px 10px rgba(255, 255, 255, 0.93);
-                           border-radius:8px;
-                           transition:all 0.2s ease-in-out;"
-                    onmouseover="this.style.background='rgba(240, 183, 13, 1)'; this.style.boxShadow='0 6px 14px rgba(231, 237, 238, 0.7)'"
-                    onmouseout="this.style.background='rgba(240, 183, 13, 1)'; this.style.boxShadow='0 4px 10px rgba(240, 243, 244, 0.5)'">
-                    Save & Print
-                </button>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <button id="just_save" type="button" class="btn btn-warning btn-block"
-                    style="background:#02c36e !important;
-                           border:none !important;
-                           color:#fff !important;
-                           font-weight:600;
-                           box-shadow:0 4px 10px rgba(255, 255, 255, 0.93);
-                           border-radius:8px;
-                           transition:all 0.2s ease-in-out;"
-                    onmouseover="this.style.background='#02c36e'; this.style.boxShadow='0 6px 14px rgba(232, 237, 236, 0.7)'"
-                    onmouseout="this.style.background='#02c36e'; this.style.boxShadow='0 4px 10px rgba(217, 219, 219, 0.5)'">
-                    Save
-                </button>
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <button id="save_and_print" type="button" class="btn btn-success btn-block"
+                            style="background:rgba(240, 183, 13, 1) !important;
+                                border:none !important;
+                                color:#fff !important;
+                                font-weight:600;
+                                border-radius:8px;
+                                ">
+                            Save & Print
+                        </button>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <button id="just_save" type="button" class="btn btn-warning btn-block"
+                            style="background:#02c36e !important;
+                                border:none !important;
+                                color:#fff !important;
+                                font-weight:600;
+                                border-radius:8px;
+                                ">
+                            Save
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
     </form>
 </div>
 @endsection

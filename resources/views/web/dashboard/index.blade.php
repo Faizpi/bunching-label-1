@@ -1,138 +1,138 @@
 @extends('web.layout.main')
-
 @section('content')
 <!-- Info boxes -->
 <div class="row" style="margin-top: 3rem">
     <form id="form_print" method="post" action="{{route('web.dashboard.print')}}" target="_blank">
         {{csrf_field()}}
-<div class="row">
-    <!-- Kolom kiri -->
-    <div class="col-sm-4 col-sm-offset-2">
-        <div class="panel panel-default" style="background: rgba(255, 255, 255, 0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(31,38,135,0.37); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
-            <div class="panel-body">
-                <div class="form-group">
-                    <label for="size">Type/Size</label>
-                    <input type="text" name="size" class="form-control" id="size" value="AVSS 2.0 SQ 37/0.260" readonly>
-                </div>
-                <div id="label_length" class="form-group">
-                    <label for="length">Length (meter)</label>
-                    <input type="number" name="length" class="form-control" id="length" placeholder="Length" required>
-                </div>
-                <div id="label_weight" class="form-group">
-                    <label for="weight">Weight (Kg)</label>
-                    <input type="number" name="weight" class="form-control" id="weight" placeholder="Weight" required>
-                </div>
-                <div id="label_date" class="form-group">
-                    <label for="date">Date</label>
-                    <select id="date" name="shift_date" class="form-control" required></select>
-                </div>
-                <div id="label_lot_not" class="form-group">
-                    <label for="lot_not">Lot No</label>
-                    <input type="number" name="lot_not" value="" class="form-control" id="lot_not" placeholder="Lot No (ex: 001)" required>
-                </div>
-                <div id="label_shift" class="form-group">
-                    <label for="shift">Shift</label>
-                    <select name="shift" id="shift" class="form-control" required>
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
-                <div id="label_machine_no" class="form-group">
-                    <label for="machine_no">Machine No</label>
-                    <select name="machine_number" id="machine_no" class="form-control" required>
-                        <option value="221" selected>221</option>
-                        <option value="222">222</option>
-                        <option value="223">223</option>
-                        <option value="224">224</option>
-                        <option value="225">225</option>
-                        <option value="226">226</option>
-                        <option value="227">227</option>
-                        <option value="228">228</option>
-                        <option value="229">229</option>
-                        <option value="230">230</option>
-                        <option value="231">231</option>
-                        <option value="217">217</option>
-                    </select>
+        <div class="row">
+            <!-- Kolom kiri -->
+            <div class="col-sm-4 col-sm-offset-2">
+                <div class="panel panel-default" style="background: rgba(255, 255, 255, 0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(31,38,135,0.37); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="size">Type/Size</label>
+                            <input type="text" name="size" class="form-control" id="size" value="AVSS 2.0 SQ 37/0.260" readonly>
+                        </div>
+                        <div id="label_length" class="form-group">
+                            <label for="length">Length (meter)</label>
+                            <input type="number" name="length" class="form-control" id="length" placeholder="Length" required>
+                        </div>
+                        <div id="label_weight" class="form-group">
+                            <label for="weight">Weight (Kg)</label>
+                            <input type="number" name="weight" class="form-control" id="weight" placeholder="Weight" required>
+                        </div>
+                        <div id="label_date" class="form-group">
+                            <label for="date">Date</label>
+                            <select id="date" name="shift_date" class="form-control" required></select>
+                        </div>
+                        <div id="label_lot_not" class="form-group">
+                            <label for="lot_not">Lot No</label>
+                            <input type="number" name="lot_not" value="" class="form-control" id="lot_not" placeholder="Lot No (ex: 001)" required>
+                        </div>
+                        <div id="label_shift" class="form-group">
+                            <label for="shift">Shift</label>
+                            <select name="shift" id="shift" class="form-control" required>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div id="label_machine_no" class="form-group">
+                            <label for="machine_no">Machine No</label>
+                            <select name="machine_number" id="machine_no" class="form-control" required>
+                                <option value="221" selected>221</option>
+                                <option value="222">222</option>
+                                <option value="223">223</option>
+                                <option value="224">224</option>
+                                <option value="225">225</option>
+                                <option value="226">226</option>
+                                <option value="227">227</option>
+                                <option value="228">228</option>
+                                <option value="229">229</option>
+                                <option value="230">230</option>
+                                <option value="231">231</option>
+                                <option value="217">217</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
     <!-- Kolom kanan -->
     <div class="col-sm-4">
         <div class="panel panel-default" style="background: rgba(255, 255, 255, 0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px rgba(31,38,135,0.37); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
             <div class="panel-body">
-                <div id="label_pitch" class="form-group">
-                    <label for="pitch">Pitch</label>
-                    <div class="radio">
-                        <label>
-                            <input name="pitch" value="20.25" type="radio" checked required> 20.25
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input name="pitch" value="22.50" type="radio"> 22.50
-                        </label>
-                    </div>
+            <div id="label_pitch" class="form-group">
+                <label for="pitch">Pitch</label>
+                <div class="radio">
+                    <label>
+                        <input name="pitch" value="20.25" type="radio" checked required 
+                            style="accent-color:#0284c7 !important;"> 20.25
+                    </label>
                 </div>
-                <div class="form-group">                        
-                    <label for="direction">Direction</label>
-                    <div class="radio">
-                        <label>
-                            <input name="direction" value="S" type="radio" checked required> S
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input name="direction" value="Z" type="radio"> Z
-                        </label>
-                    </div>
-                </div>        
-                <div class="form-group">
-                    <label for="visual">Visual</label>
-                    <div class="radio">
-                        <label>
-                            <input name="visual" value="OK" type="radio" checked required> OK
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input name="visual" value="NG" type="radio"> NG
-                        </label>
-                    </div>
+                <div class="radio">
+                    <label>
+                        <input name="pitch" value="22.50" type="radio" 
+                            style="accent-color:#0284c7 !important;"> 22.50
+                    </label>
                 </div>
-                <div id="label_remark" class="form-group">
-                    <label for="remark">Remark</label>
-                    <input type="text" name="remark" class="form-control" id="remark" placeholder="Remark" required>
+            </div>
+            <div class="form-group">                        
+                <label for="direction">Direction</label>
+                <div class="radio">
+                    <label>
+                        <input name="direction" value="S" type="radio" checked required 
+                            style="accent-color:#0284c7 !important;"> S
+                    </label>
                 </div>
-                <div id="label_bobin_no" class="form-group">
-                    <label for="bobin_no">No Bobin</label>
-                    <input type="text" name="bobin_no" value="" class="form-control" id="bobin_no" placeholder="No Bobin" required>
+                <div class="radio">
+                    <label>
+                        <input name="direction" value="Z" type="radio" 
+                            style="accent-color:#0284c7 !important;"> Z
+                    </label>
                 </div>
+            </div>        
+            <div class="form-group">
+                <label for="visual">Visual</label>
+                <div class="radio">
+                    <label>
+                        <input name="visual" value="OK" type="radio" checked required 
+                            style="accent-color:#0284c7 !important;"> OK
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input name="visual" value="NG" type="radio" 
+                            style="accent-color:#0284c7 !important;"> NG
+                    </label>
+                </div>
+            </div>
+            <div id="label_remark" class="form-group">
+                <label for="remark">Remark</label>
+                <input type="text" name="remark" class="form-control" id="remark" placeholder="Remark" required>
+            </div>
+            <div id="label_bobin_no" class="form-group">
+                <label for="bobin_no">No Bobin</label>
+                <input type="text" name="bobin_no" value="" class="form-control" id="bobin_no" placeholder="No Bobin" required>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <button type="submit" 
-            class="btn btn-primary btn-block" 
-            style="background:#0284c7 !important;
-                   border:none !important;
-                   color:#fff !important;
-                   font-weight:600;
-                   box-shadow:0 4px 10px rgba(255, 255, 255, 0.93);
-                   border-radius:6px;
-                   transition:all 0.2s ease-in-out;"
-            onmouseover="this.style.background='#0284c7'; this.style.boxShadow='0 6px 14px rgba(226, 240, 243, 0.7)'"
-            onmouseout="this.style.background='#0284c7'; this.style.boxShadow='0 4px 10px rgba(201, 209, 211, 0.5)'">
-            Print
-        </button>
-    </div>
-</div>
-
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <button type="submit" 
+                    class="btn btn-primary btn-block" 
+                    style="background:#0284c7 !important;
+                        border:none !important;
+                        color:#fff !important;
+                        font-weight:600;
+                        border-radius:8px;
+                        ">
+                    Print
+                </button>
+            </div>
+        </div>
     </form>
 </div>
 
