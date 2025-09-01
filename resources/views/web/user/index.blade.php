@@ -41,8 +41,14 @@
                 <div class="container-fluid">
                     <div class="row mb-3">
                         <div class="col-sm-12 col-md-3">
-                            <form class="form-inline" style="gap:0.5rem;">
-                                <input type="text" placeholder="Masukan No. ID" 
+                            <form class="form-inline" 
+                                  action="{{ route('web.user.index') }}" 
+                                  method="GET" 
+                                  style="gap:0.5rem;">
+                                <input type="text" 
+                                       name="search"
+                                       value="{{ request('search') ?? '' }}" 
+                                       placeholder="Masukan No. ID" 
                                        class="form-control input-sm"
                                        style="border-radius:6px;
                                               padding:0.4rem 0.75rem;
@@ -64,15 +70,22 @@
                         </div>
 
                         <div class="col-sm-12 col-md-9 text-end">
-                            <form class="form-inline d-flex justify-content-end" style="gap:0.5rem;">
-                                <select class="form-control form-control-sm"
+                            <form class="form-inline d-flex justify-content-end" 
+                                  action="{{ route('web.user.index') }}" 
+                                  method="GET" 
+                                  style="gap:0.5rem;">
+                                <select name="role"
+                                        id="role"
+                                        class="form-control form-control-sm"
                                         style="border-radius:6px;
                                                border:1px solid #cbd5e1;
                                                background:#f8fafc;
                                                color:#1e293b;">
                                     <option value="" selected="">Semua Role</option>
                                     @foreach(\App\Constans\UserRole::LIST as $i => $role)
-                                        <option value="{{$i}}" {{!is_null(\Request::get('role')) && \Request::get('role') == $i ? 'selected':''}}>{{ucfirst($role)}}</option>
+                                        <option value="{{$i}}" {{!is_null(request('role')) && request('role') == $i ? 'selected':''}}>
+                                            {{ucfirst($role)}}
+                                        </option>
                                     @endforeach
                                 </select>
                                 <button type="submit" 

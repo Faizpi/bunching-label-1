@@ -166,6 +166,7 @@
                         <div class="col-md-6">
                             <form class="form-inline" style="gap:0.5rem;">
                                 <input type="text" 
+                                       name="search"
                                        value="{{ request('search') ?? '' }}" 
                                        placeholder="Masukan Lot No." 
                                        class="form-control input-sm"
